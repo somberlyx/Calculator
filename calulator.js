@@ -75,39 +75,7 @@ numbers.forEach(numbers => {
         numEntered = '';
       }
     } else if(numbers.value === '=') {
-      userInput.push(numEntered);
-      numEntered = '';
-      userInput = userInput.map(Number);
-      for(i = j; i < userInput.length; i++){
-        if (operationArray[i] === '+') {
-          result = userInput[i] + userInput[i+1]
-          userInput[i+1] = result;
-          result = userInput[i+1];
-          //calculation += result;
-          displayResults.innerHTML = result;
-        } else if (operationArray[i] === '-') {
-          result = userInput[i] - userInput[i+1];
-          userInput[i+1] = result;
-          result = userInput[i+1];
-          //calculation -= result;
-          displayResults.innerHTML = result;
-        } else if (operationArray[i] === '*') {
-          result = userInput[i] * userInput[i+1];
-          userInput[i+1] = result;
-          result = userInput[i+1];
-          //calculation *= result;
-          displayResults.innerHTML = result;
-        } else if (operationArray[i] === '/') {
-          result = userInput[i] / userInput[i+1];
-          userInput[i+1] = result;
-          result = userInput[i+1];
-          //calculation /= result
-          displayResults.innerHTML = result;
-        }
-        j++;
-      }
-      j--;
-
+      calculate();
 
       /* for (i=0; i < operationArray.length; i++){
         if  operationArray[i] === '+') {
@@ -150,6 +118,41 @@ function reset(){
   numEntered = '';
   j = 0;
   displayResults.innerHTML = '';
+}
+
+function calculate(){
+  userInput.push(numEntered);
+      numEntered = '';
+      userInput = userInput.map(Number);
+      for(i = j; i < userInput.length; i++){
+        if (operationArray[i] === '+') {
+          result = userInput[i] + userInput[i+1]
+          userInput[i+1] = result;
+          result = userInput[i+1];
+          //calculation += result;
+          displayResults.innerHTML = result;
+        } else if (operationArray[i] === '-') {
+          result = userInput[i] - userInput[i+1];
+          userInput[i+1] = result;
+          result = userInput[i+1];
+          //calculation -= result;
+          displayResults.innerHTML = result;
+        } else if (operationArray[i] === '*') {
+          result = userInput[i] * userInput[i+1];
+          userInput[i+1] = result;
+          result = userInput[i+1];
+          //calculation *= result;
+          displayResults.innerHTML = result;
+        } else if (operationArray[i] === '/') {
+          result = userInput[i] / userInput[i+1];
+          userInput[i+1] = result;
+          result = userInput[i+1];
+          //calculation /= result
+          displayResults.innerHTML = result;
+        }
+        j++;
+      }
+      return j--;
 }
 
 /*function evaluate(){
