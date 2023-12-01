@@ -61,16 +61,7 @@ let j = 0;
 numbers.forEach(numbers => {
   numbers.addEventListener("click", function(){
     if (numbers.value === 'AC'){
-      displaySelection.value = '';
-      firstNum = 0
-      secondNum = 0
-      result = 0
-      userInput = [];
-      userInput2 = [];
-      operation = null
-      numEntered = '';
-      j = 0;
-      displayResults.innerHTML = '';
+      reset();
     } else if (numbers.value === 'DE'){
       displaySelection.value = displaySelection.value.toString().slice(0,-1);
     } else if (numbers.value === '+' || numbers.value === '*' || numbers.value === '/' || numbers.value === '-'){
