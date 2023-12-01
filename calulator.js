@@ -64,14 +64,15 @@ numbers.forEach(numbers => {
       reset();
     } else if (numbers.value === 'DE'){
       displaySelection.value = displaySelection.value.toString().slice(0,-1);
+      numEntered = numEntered.toString().slice(0,-1);
     } else if (numbers.value === '+' || numbers.value === '*' || numbers.value === '/' || numbers.value === '-'){
       if (numEntered === ''){
         operation = numbers.value;
-       operationArray.push(operation)
+        operationArray.push(operation)
       } else {
         userInput.push(numEntered);
         operation = numbers.value;
-       operationArray.push(operation)
+        operationArray.push(operation)
         numEntered = '';
       }
     } else if(numbers.value === '=') {
