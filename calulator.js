@@ -49,6 +49,7 @@ function reset(){
 function calculate(){
   numberArray.push(numEntered);
   numEntered = '';
+  displaySelection.value = '';
   numberArray = numberArray.map(Number);
   for(i = j; i < numberArray.length; i++){
     if (operationArray[i] === '+') {

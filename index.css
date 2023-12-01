@@ -18,6 +18,51 @@
   background: #333;
   padding: 20px;
   border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.display{
+  display: grid;
+  width: fit-content;
+  padding: 10px;
+  grid-template-columns: 80px 80px 80px 80px;
+  column-gap: 10px;
+  margin-right:20px;
+}
+
+input {
+  border: 0;
+  outline: 0;
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  /*box-shadow: -10px -10px 17px rgba(255, 255, 255, 0.1),7px 7px 15px rgba(0, 0, 0, 0.2);
+  background: #a3a3a3;*/
+  font-size: 25px;
+}
+
+.displayResults{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  width: 240px;
+  height: 30px;
+  margin: 10px 10px 30px 10px;
+  padding: 10px;
+  font-size: 30px;
+}
+
+.displaySelections {
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.equals {
+  grid-column-start: 3;
+  grid-column-end: 4;
 }
 
 .displayResults {
