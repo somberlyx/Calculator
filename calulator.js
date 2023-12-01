@@ -2,7 +2,7 @@ const numbers = document.querySelectorAll(".numbers");
 const displaySelection = document.querySelector(".displaySelections")
 const displayResults = document.querySelector(".displayResults")
 let userInput = [];
-let userInput2 = [];
+let operationArray = [];
 let operation;
 let result = 0;
 let numEntered = '';
@@ -16,7 +16,7 @@ let j = 0;
       secondNum = 0
       result = 0
       userInput = [];
-      userInput2 = [];
+     operationArray = [];
       operation = null
       step = 1
       displayResults.innerHTML = '';
@@ -47,8 +47,8 @@ let j = 0;
         firstNum = Number(userInput.join(''))
         displaySelection.value = firstNum;
       } else if (step === 2){
-        userInput2.push(numbers.value);
-        secondNum = Number(userInput2.join(''))
+       operationArray.push(numbers.value);
+        secondNum = Number operationArray.join(''))
         displaySelection.value = secondNum;
       }
     }
@@ -67,37 +67,37 @@ numbers.forEach(numbers => {
     } else if (numbers.value === '+' || numbers.value === '*' || numbers.value === '/' || numbers.value === '-'){
       if (numEntered === ''){
         operation = numbers.value;
-        userInput2.push(operation)
+       operationArray.push(operation)
       } else {
         userInput.push(numEntered);
         operation = numbers.value;
-        userInput2.push(operation)
+       operationArray.push(operation)
         numEntered = '';
       }
     } else if(numbers.value === '=') {
       userInput.push(numEntered);
       numEntered = '';
-      userInput = userInput.map(Number);n
+      userInput = userInput.map(Number);
       for(i = j; i < userInput.length; i++){
-        if (userInput2[i] === '+') {
+        if (operationArray[i] === '+') {
           result = userInput[i] + userInput[i+1]
           userInput[i+1] = result;
           result = userInput[i+1];
           //calculation += result;
           displayResults.innerHTML = result;
-        } else if (userInput2[i] === '-') {
+        } else if (operationArray[i] === '-') {
           result = userInput[i] - userInput[i+1];
           userInput[i+1] = result;
           result = userInput[i+1];
           //calculation -= result;
           displayResults.innerHTML = result;
-        } else if (userInput2[i] === '*') {
+        } else if (operationArray[i] === '*') {
           result = userInput[i] * userInput[i+1];
           userInput[i+1] = result;
           result = userInput[i+1];
           //calculation *= result;
           displayResults.innerHTML = result;
-        } else if (userInput2[i] === '/') {
+        } else if (operationArray[i] === '/') {
           result = userInput[i] / userInput[i+1];
           userInput[i+1] = result;
           result = userInput[i+1];
@@ -109,20 +109,20 @@ numbers.forEach(numbers => {
       j--;
 
 
-      /* for (i=0; i < userInput2.length; i++){
-        if (userInput2[i] === '+') {
+      /* for (i=0; i < operationArray.length; i++){
+        if  operationArray[i] === '+') {
           result = userInput[0] + userInput[1]
           //calculation += result;
           displayResults.innerHTML = result;
-        } else if (userInput2[i] === '-') {
+        } else if  operationArray[i] === '-') {
           result = userInput[0] - userInput[1];
           //calculation -= result;
           displayResults.value = result;
-        } else if (userInput2[i] === '*') {
+        } else if  operationArray[i] === '*') {
           result = userInput[0] * userInput[1];
           //calculation *= result;
           displayResults.value = result;
-        } else if (userInput2[i] === '/') {
+        } else if  operationArray[i] === '/') {
           result = userInput[0] / userInput[1];
           //calculation /= result
           displayResults.value = result;
@@ -145,7 +145,7 @@ function reset(){
   displaySelection.value = '';
   result = 0
   userInput = [];
-  userInput2 = [];
+ operationArray = [];
   operation = null;
   numEntered = '';
   j = 0;
