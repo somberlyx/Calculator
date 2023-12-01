@@ -3,9 +3,6 @@ const displaySelection = document.querySelector(".displaySelections")
 const displayResults = document.querySelector(".displayResults")
 let userInput = [];
 let userInput2 = [];
-let firstNum = 0;
-let secondNum = 0;
-let step = 1;
 let operation;
 let result = 0
 
@@ -60,7 +57,6 @@ let result = 0
 let numEntered = '';
 let calculation = 0;
 let j = 0;
-let k = 0;
 
 numbers.forEach(numbers => {
   numbers.addEventListener("click", function(){
@@ -118,7 +114,6 @@ numbers.forEach(numbers => {
           displayResults.innerHTML = result;
         }
         j++;
-        k++;
       }
       j--;
 
