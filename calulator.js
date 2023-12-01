@@ -4,7 +4,9 @@ const displayResults = document.querySelector(".displayResults")
 let userInput = [];
 let userInput2 = [];
 let operation;
-let result = 0
+let result = 0;
+let numEntered = '';
+let j = 0;
 
 /* numbers.forEach(numbers => {
   numbers.addEventListener("click", function(){
@@ -54,9 +56,7 @@ let result = 0
   })
 }) */
 
-let numEntered = '';
-let calculation = 0;
-let j = 0;
+
 
 numbers.forEach(numbers => {
   numbers.addEventListener("click", function(){
