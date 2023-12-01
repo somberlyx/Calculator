@@ -76,31 +76,6 @@ numbers.forEach(numbers => {
       }
     } else if(numbers.value === '=') {
       calculate();
-
-      /* for (i=0; i < operationArray.length; i++){
-        if  operationArray[i] === '+') {
-          result = userInput[0] + userInput[1]
-          //calculation += result;
-          displayResults.innerHTML = result;
-        } else if  operationArray[i] === '-') {
-          result = userInput[0] - userInput[1];
-          //calculation -= result;
-          displayResults.value = result;
-        } else if  operationArray[i] === '*') {
-          result = userInput[0] * userInput[1];
-          //calculation *= result;
-          displayResults.value = result;
-        } else if  operationArray[i] === '/') {
-          result = userInput[0] / userInput[1];
-          //calculation /= result
-          displayResults.value = result;
-      }
-      console.log(userInput)
-      userInput.shift();
-      console.log(userInput)
-      userInput[0] = result;
-      console.log(userInput)
-    } */
    } else {
       numEntered += numbers.value;
       displaySelection.value = numEntered;
