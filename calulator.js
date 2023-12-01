@@ -58,6 +58,9 @@ let result = 0
 }) */
 
 let numEntered = '';
+let calculation = 0;
+let j = 0;
+let k = 0;
 
 numbers.forEach(numbers => {
   numbers.addEventListener("click", function(){
@@ -69,69 +72,99 @@ numbers.forEach(numbers => {
       userInput = [];
       userInput2 = [];
       operation = null
-      step = 1
+      numEntered = '';
+      j = 0;
       displayResults.innerHTML = '';
     } else if (numbers.value === 'DE'){
       displaySelection.value = displaySelection.value.toString().slice(0,-1);
-      userInput.pop();
     } else if (numbers.value === '+' || numbers.value === '*' || numbers.value === '/' || numbers.value === '-'){
-      userInput.push(numEntered);
-      operation = numbers.value;
-      userInput2.push(operation)
-      numEntered = '';
-      /* if (operation === '+') {
-        result = firstNum + secondNum;
-        displayResults.innerHTML = result;
-      } else if (operation === '-') {
-        result = firstNum - secondNum;
-        displaySelection.value = result;
-      } else if (operation === '*') {
-        result = firstNum * secondNum;
-        displaySelection.value = result;
-      } else if (operation === '/') {
-        result = firstNum / secondNum;
-        displaySelection.value = result;
-      } */
+      if (numEntered === ''){
+        operation = numbers.value;
+        userInput2.push(operation)
+      } else {
+        userInput.push(numEntered);
+        operation = numbers.value;
+        userInput2.push(operation)
+        numEntered = '';
+      }
     } else if(numbers.value === '=') {
       userInput.push(numEntered);
       numEntered = '';
-      let calculation = 0;
-      userInput = userInput.map(Number);
-      for (i=0; i < userInput2.length; i++){
+      userInput = userInput.map(Number);n
+      for(i = j; i < userInput.length; i++){
+        if (userInput2[i] === '+') {
+          result = userInput[i] + userInput[i+1]
+          userInput[i+1] = result;
+          result = userInput[i+1];
+          //calculation += result;
+          displayResults.innerHTML = result;
+        } else if (userInput2[i] === '-') {
+          result = userInput[i] - userInput[i+1];
+          userInput[i+1] = result;
+          result = userInput[i+1];
+          //calculation -= result;
+          displayResults.innerHTML = result;
+        } else if (userInput2[i] === '*') {
+          result = userInput[i] * userInput[i+1];
+          userInput[i+1] = result;
+          result = userInput[i+1];
+          //calculation *= result;
+          displayResults.innerHTML = result;
+        } else if (userInput2[i] === '/') {
+          result = userInput[i] / userInput[i+1];
+          userInput[i+1] = result;
+          result = userInput[i+1];
+          //calculation /= result
+          displayResults.innerHTML = result;
+        }
+        j++;
+        k++;
+      }
+      j--;
+
+
+      /* for (i=0; i < userInput2.length; i++){
         if (userInput2[i] === '+') {
           result = userInput[0] + userInput[1]
-          calculation += result;
-          displayResults.innerHTML = calculation;
+          //calculation += result;
+          displayResults.innerHTML = result;
         } else if (userInput2[i] === '-') {
           result = userInput[0] - userInput[1];
-          calculation -= result;
-          displaySelection.value = calculation;
+          //calculation -= result;
+          displayResults.value = result;
         } else if (userInput2[i] === '*') {
           result = userInput[0] * userInput[1];
-          calculation *= result;
-          displaySelection.value = calculation;
+          //calculation *= result;
+          displayResults.value = result;
         } else if (userInput2[i] === '/') {
           result = userInput[0] / userInput[1];
-          calculation /= result
-          displaySelection.value = calculation;
+          //calculation /= result
+          displayResults.value = result;
       }
-    }
+      console.log(userInput)
+      userInput.shift();
+      console.log(userInput)
+      userInput[0] = result;
+      console.log(userInput)
+    } */
    } else {
       numEntered += numbers.value;
-      /* if (step === 1){
-        step = 1;
-        userInput.push(numbers.value);
-        firstNum = Number(userInput.join(''))
-        displaySelection.value = firstNum;
-      } else if (step === 2){
-        userInput2.push(numbers.value);
-        secondNum = Number(userInput2.join(''))
-        displaySelection.value = secondNum;
-      } */
+      displaySelection.value = numEntered;
     }
     console.log(userInput);
   })
 })
+
+function reset(){
+  displaySelection.value = '';
+  result = 0
+  userInput = [];
+  userInput2 = [];
+  operation = null;
+  numEntered = '';
+  j = 0;
+  displayResults.innerHTML = '';
+}
 
 /*function evaluate(){
   let item = [];
