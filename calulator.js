@@ -56,22 +56,22 @@ function calculate(){
       result = numberArray[i] + numberArray[i+1]
       numberArray[i+1] = result;
       result = numberArray[i+1];
-      displayResults.innerHTML = result;
+      displaySelection.value = result;
     } else if (operationArray[i] === '-') {
       result = numberArray[i] - numberArray[i+1];
       numberArray[i+1] = result;
       result = numberArray[i+1];
-      displayResults.innerHTML = result;
+      displaySelection.value = result;
     } else if (operationArray[i] === '*') {
       result = numberArray[i] * numberArray[i+1];
       numberArray[i+1] = result;
       result = numberArray[i+1];
-      displayResults.innerHTML = result;
+      displaySelection.value = result;
     } else if (operationArray[i] === '/') {
       result = numberArray[i] / numberArray[i+1];
       numberArray[i+1] = result;
       result = numberArray[i+1];
-      displayResults.innerHTML = result;
+      displaySelection.value = result;
     }
     j++;
   }
